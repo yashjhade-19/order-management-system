@@ -40,4 +40,3 @@ build/
 
 # AWS credentials
 *.csv
-application.properties
