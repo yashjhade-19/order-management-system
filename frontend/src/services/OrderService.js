@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+// 👇 This will now use the value from .env file
 const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080';
 
 export const createOrder = async (orderData, file) => {

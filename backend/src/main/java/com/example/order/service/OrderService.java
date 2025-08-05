@@ -26,7 +26,7 @@ public class OrderService {
     @Value("${aws.s3.bucket}")
     private String bucketName;
 
-    @Value("${aws.sns.topicArn}")
+    @Value(value = "${aws.sns.topicArn}")
     private String snsTopicArn;
 
     public Order createOrder(Order order, MultipartFile invoiceFile) throws IOException {
