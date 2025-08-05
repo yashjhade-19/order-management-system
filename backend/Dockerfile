@@ -1,14 +1,12 @@
-# Use official OpenJDK 11 image
-FROM openjdk:11-jdk-slim
-
-# Set the working directory
+# Step 1: Use Maven + Java 11 to build the app
+FROM maven:3.9.5-eclipse-temurin-11 AS build
 WORKDIR /app
+COPY . .
+RUN mvn clean package -DskipTests
 
-# Copy the built JAR file
-COPY target/*.jar app.jar
-
-# Expose port (matches Spring Boot port)
+# Step 2: Use Java 11 runtime to run the built app
+FROM eclipse-temurin:11-jdk
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
-
-# Run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
