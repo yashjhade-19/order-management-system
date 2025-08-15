@@ -35,7 +35,7 @@ public class OrderService {
 
         // Upload invoice to S3
         if(invoiceFile != null && !invoiceFile.isEmpty()) {
-            String fileName = "invoice-" + order.getOrderId() + ".pdf";
+            String fileName = "invoiceName-" + order.getOrderId() + ".pdf";
             order.setInvoiceFileUrl(uploadToS3(fileName, invoiceFile));
         }
 
