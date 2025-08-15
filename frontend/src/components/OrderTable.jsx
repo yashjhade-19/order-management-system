@@ -13,7 +13,7 @@ const OrderTable = ({ orders }) => (
             <tr>
                 <th>Order ID</th>
                 <th>Customer</th>
-                <th>Amount ($)</th>
+                <th>Amount Number ($)</th>
                 <th>Date</th>
                 <th>Invoice</th>
                 <th>Actions</th>
